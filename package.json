@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^4.1.17",
+    "locomotive-scroll": "^4.1.2",
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.42.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",

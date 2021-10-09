@@ -1,0 +1,416 @@
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Helvetica"),
+    url("../public/fonts/Helvetica/Helvetica-Light.woff") format("woff"),
+    url("../public/fonts/Helvetica/Helvetica-Light.woff2") format("woff2"),
+    url("../public/fonts/Helvetica/helvetica-light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Helvetica"),
+    url("../public/fonts/Helvetica/Helvetica.ttf") format("truetype"),
+    url("../public/fonts/Helvetica/Helvetica.woff") format("woff"),
+    url("../public/fonts/Helvetica/Helvetica.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Helvetica"),
+    url("../public/fonts/Helvetica/Helvetica-Bold.ttf") format("truetype"),
+    url("../public/fonts/Helvetica/Helvetica-Bold.woff") format("woff"),
+    url("../public/fonts/Helvetica/Helvetica-Bold.woff2") format("woff2");
+}
+
+.light {
+  --theme-page-background: rgb(254, 254, 255);
+  --theme-page-text: #010613;
+  --theme-page-fade-white: rgba(77, 77, 77, 0.952);
+  --theme-page-blue: #3370ff;
+}
+
+.dark {
+  --theme-page-background: #010613;
+  --theme-page-text: rgb(254, 254, 255);
+  --theme-page-fade-white: rgba(243, 243, 243, 0.788);
+  --theme-page-blue: #3370ff;
+}
+
+:root {
+  --text: var(--theme-page-text);
+  --line: var(--theme-page-background);
+  --line-active: #3370ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--theme-page-text);
+    background: var(--theme-page-background);
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: var(--theme-page-background);
+  color: var(--theme-page-text);
+  transition: all 0.25s linear;
+  scroll-behavior: smooth;
+}
+
+*::selection {
+  color: var(--theme-page-background);
+  background: var(--theme-page-text);
+}
+
+#__next {
+  background: var(--theme-page-background);
+  color: var(--theme-page-text);
+  transition: all 0.25s linear;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.is-reveal {
+  img {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0) !important;
+  }
+  .WorkComponent_workDetails__2EO3N {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0) !important;
+  }
+  //transform: scale(1) !important;
+}
+.banner-row {
+  overflow: hidden;
+}
+
+.animated-text {
+  display: block;
+}
+.animated-text-1,
+.text-letters-1,
+.text-letters-2,
+.animated-text-2 {
+  font-size: clamp(6rem, 25vh, 22rem);
+  font-weight: 500;
+  position: relative;
+  letter-spacing: -0.8rem;
+  display: inline-block;
+  white-space: nowrap;
+  transition: all 0.25s linear;
+  @media (max-width: 1000px) {
+    font-size: clamp(1rem, 16vh, 22rem);
+    letter-spacing: 0;
+  }
+  @media (max-width: 500px) {
+    font-size: clamp(1rem, 8vh, 22rem);
+    letter-spacing: 0;
+  }
+}
+
+.animated-text-2,
+.text-letters-2 {
+  font-size: clamp(1rem, 2rem, 22rem);
+  letter-spacing: 0.2px;
+  font-weight: 400 !important;
+  margin-left: 10px;
+  @media (max-width: 1000px) {
+    margin-left: 0;
+  }
+  @media (max-width: 500px) {
+    font-size: clamp(1rem, 1.2rem, 22rem);
+    margin-left: 0;
+  }
+}
+
+.text-letters-1:hover {
+  transform: translateY(-10px) !important;
+  color: var(--theme-page-background);
+  text-shadow: -1px -1px 0 var(--theme-page-text),
+    1px -1px 0 var(--theme-page-text), -1px 1px 0 var(--theme-page-text),
+    1px 1px 0 var(--theme-page-text);
+  cursor: pointer;
+}
+
+///mouse///
+.main-cursor,
+.secondary-cursor {
+  z-index: 10000;
+  pointer-events: none;
+  // overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  @media (max-width: 800px) {
+    display: none;
+  }
+}
+
+.main-cursor {
+  transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+  animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  mix-blend-mode: exclusion;
+
+  .main-cursor-background {
+    width: 30px;
+    height: 30px;
+    background: yellow;
+    border-radius: 50%;
+    transition: all 0.25s linear;
+    will-change: transform, background;
+  }
+}
+
+.secondary-cursor {
+  width: 60px;
+  height: 60px;
+
+  .cursor-background {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--theme-page-text);
+    position: relative;
+    transition: all 0.25s linear;
+    will-change: transform, background;
+    &:after,
+    &:before {
+      content: "";
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--theme-page-background);
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+    }
+    &:before {
+      left: 10px;
+    }
+
+    &:after {
+      right: 10px;
+    }
+  }
+}
+
+.slider-drag {
+  .cursor-background {
+    animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+      bgUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+
+    &:after {
+      animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+        translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+    }
+
+    &:before {
+      animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+        translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+    }
+  }
+
+  .main-cursor {
+    animation: fadeOut 0.75s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  }
+}
+
+.link {
+  .cursor-background {
+    background: var(--theme-page-blue);
+    transform: scale(0.2);
+  }
+
+  .main-cursor-background {
+    background: transparent;
+    border: 1px solid var(--theme-page-text);
+  }
+}
+.footerLink {
+  .cursor-background {
+    background: var(--theme-page-blue);
+    transform: scale(0.2);
+  }
+
+  .main-cursor-background {
+    background: transparent;
+    //border: 1px solid var(--theme-page-text);
+  }
+}
+.footerHello {
+  .cursor-background {
+    background: transparent;
+    transform: scale(2);
+    border: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .main-cursor-background {
+    background: transparent;
+    //border: 1px solid var(--theme-page-text);
+  }
+}
+
+.themeBtnHover {
+  .cursor-background {
+    background: rgb(230, 60, 8);
+    transform: scale(0.2);
+  }
+
+  .main-cursor-background {
+    background: transparent;
+    border: 1px solid var(--theme-page-text);
+  }
+}
+.work {
+  .cursor-background {
+    background: var(--theme-page-blue);
+    transform: scale(2);
+    border: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .main-cursor-background {
+    background: transparent;
+  }
+}
+.footerMouse {
+  .cursor-background {
+    background: var(--theme-page-blue);
+    transform: scale(0.5);
+    border: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .main-cursor-background {
+    background: transparent;
+  }
+}
+
+.hamburger {
+  .cursor-background {
+    animation: fadeOut 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  }
+
+  .main-cursor-background {
+    animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bgUp {
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: black;
+  }
+}
+
+@keyframes bgDown {
+  from {
+    background-color: black;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1.5);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes translateLeftDot {
+  from {
+    transform: translate(20px, -50%);
+  }
+
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+
+@keyframes translateRightDot {
+  from {
+    transform: translate(-20px, -50%);
+  }
+
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+///mouse///

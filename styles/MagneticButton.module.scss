@@ -1,0 +1,51 @@
+.magneticBtn {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: var(--theme-page-blue);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0 auto;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: all !important;
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: #010613;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    z-index: 0;
+    clip-path: circle(0.2% at 100% 100%);
+    transition: all 0.35s linear;
+  }
+  a {
+    font-size: 1.5rem;
+    transition: all 0.25s linear;
+    color: rgb(254, 254, 255);
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      transform: translateY(300px);
+      transition: all 0.25s linear;
+    }
+  }
+  &:hover {
+    &::before {
+      clip-path: circle(70.7% at 50% 50%);
+    }
+    a {
+      transform: translateY(-300px) !important;
+      &::before {
+        transform: translateY(300px) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.preloader {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 999;
+  padding: 5rem;
+  @media (max-width: 1000px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    font-size: clamp(10rem, 15vw, 18vw);
+    span {
+      font-size: 5vw;
+      color: white;
+      text-shadow: -1px -1px 0 rgb(0, 4, 15), 1px -1px 0 rgb(0, 4, 15),
+        -1px 1px 0 rgb(0, 4, 15), 1px 1px 0 rgb(0, 4, 15);
+    }
+  }
+}

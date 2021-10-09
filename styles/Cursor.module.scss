@@ -1,0 +1,57 @@
+.outerCursor {
+  position: fixed;
+  top: 400px;
+  left: 400px;
+  width: 32px;
+  height: 32px;
+  background: #ea281e;
+  @media (max-width: 500px) {
+    display: none;
+  }
+  @supports (mix-blend-mode: difference) {
+    mix-blend-mode: difference;
+  }
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease-out;
+  transition-property: width, height, border;
+  will-change: width, height, transform, border;
+  pointer-events: none;
+  z-index: 9999;
+  .innerCursor {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 400px;
+    left: 400px;
+    background: #1e2cea;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease-out;
+  }
+  &.pointer {
+    border: 4px solid var(--theme-page-text) !important;
+  }
+  &.hovered {
+    background: transparent !important;
+    width: 56px;
+    height: 56px;
+    border: 4px solid #ea281e;
+    border: 4px solid #ea281e;
+  }
+  &.locked {
+    background: transparent !important;
+    width: 56px;
+    height: 56px;
+    border: 4px solid var(--theme-page-text) !important;
+    // top: ${props => props.theme.top} !important;
+    // left: ${props => props.theme.left} !important;
+  }
+  &.nav-open {
+    background: var(--theme-page-text);
+  }
+  &.nav-open,
+  &.locked {
+    border: 4px solid var(--theme-page-text) !important;
+  }
+}

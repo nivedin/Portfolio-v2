@@ -1,0 +1,154 @@
+.mainHeader {
+  padding: 0 6%;
+  min-height: 10vh;
+  position: relative;
+  z-index: 999;
+  nav {
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 10vh;
+    mix-blend-mode: difference;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 88%;
+
+    .logo {
+      a {
+        position: relative;
+        svg {
+          width: 76px;
+          height: 40px;
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translate(-50%, 7px) translateZ(0);
+          fill: none;
+          stroke: var(--stroke, var(--line));
+          stroke-linecap: round;
+          stroke-width: 2px;
+          stroke-dasharray: var(--offset, 69px) 278px;
+          stroke-dashoffset: 361px;
+          transition: stroke 0.25s ease var(--stroke-delay, 0s),
+            stroke-dasharray 0.35s;
+        }
+        &:hover {
+          --spacing: 4px;
+          --stroke: var(--line-active);
+          --stroke-delay: 0.1s;
+          --offset: 180px;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          display: block;
+          height: 5px;
+          width: 5px;
+          background: var(--theme-page-text);
+          right: -50%;
+          bottom: 5px;
+          border-radius: 50%;
+        }
+      }
+    }
+    .line {
+      position: relative;
+      width: 80%;
+      margin: 0 10px;
+      height: 2px;
+      border-radius: 5px;
+      background: var(--theme-page-text);
+      transform: scaleX(1);
+      transform-origin: left right;
+      transition: all 0.4s ease-in-out;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      li {
+        list-style: none;
+        color: var(--theme-page-text);
+        a {
+          position: relative;
+          z-index: 1;
+          transition: all 0.25s ease;
+          svg {
+            width: 76px;
+            height: 40px;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 7px) translateZ(0);
+            fill: none;
+            stroke: var(--stroke, var(--line));
+            stroke-linecap: round;
+            stroke-width: 2px;
+            stroke-dasharray: var(--offset, 69px) 278px;
+            stroke-dashoffset: 361px;
+            transition: stroke 0.25s ease var(--stroke-delay, 0s),
+              stroke-dasharray 0.35s;
+          }
+          &:hover {
+            --spacing: 4px;
+            --stroke: var(--theme-page-text);
+            --stroke-delay: 0.1s;
+            --offset: 180px;
+          }
+          // &::before {
+          //   position: absolute;
+          //   z-index: -1;
+          //   content: "";
+          //   display: block;
+          //   height: 35px;
+          //   width: 100%;
+          //   background: var(--theme-page-text);
+          //   right: 0;
+          //   left: 0;
+          //   top: 0;
+          //   bottom: 0;
+          //   border-radius: 50%;
+          //   transform: scale(0) translateY(-20%);
+          //   transition: all 0.25s linear;
+          // }
+          // &::after {
+          //   position: absolute;
+          //   content: "";
+          //   width: 100%;
+          //   height: 1px;
+          //   background: var(--theme-page-background);
+          //   transform: scaleX(0);
+          //   left: 0;
+          //   bottom: -2px;
+          //   transition: all 0.5s linear;
+          // }
+          &:hover {
+            color: var(--theme-page-text);
+            // &::after {
+            //   transform: scaleX(1);
+            // }
+            // &::before {
+            //   transform: scale(2) translateY(-20%);
+            // }
+          }
+        }
+      }
+      .themeBtn {
+        background: none;
+        border: 0;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
