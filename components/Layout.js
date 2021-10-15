@@ -15,7 +15,7 @@ function Layout({ children }) {
     import("locomotive-scroll").then((LocomotiveScroll) => {
       scroll = new LocomotiveScroll.default({
         el: document.querySelector("#scroll-container"),
-        inertia: 0.8,
+        multiplier: 0.9,
         smooth: true,
         smartphone: {
           smooth: true,

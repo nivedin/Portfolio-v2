@@ -49,10 +49,20 @@
   --line-active: #3370ff;
 }
 
+@media (prefers-color-scheme: light) {
+  .light {
+    --theme-page-background: rgb(254, 254, 255);
+    --theme-page-text: #010613;
+    --theme-page-fade-white: rgba(77, 77, 77, 0.952);
+    --theme-page-blue: #3370ff;
+  }
+}
 @media (prefers-color-scheme: dark) {
-  body {
-    color: var(--theme-page-text);
-    background: var(--theme-page-background);
+  .dark {
+    --theme-page-background: #010613;
+    --theme-page-text: rgb(254, 254, 255);
+    --theme-page-fade-white: rgba(243, 243, 243, 0.788);
+    --theme-page-blue: #3370ff;
   }
 }
 
@@ -91,6 +101,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.WorkSingle_workSinglePage__2HM2X .is-reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 .is-reveal {
   img {
@@ -193,13 +208,15 @@ a {
     position: relative;
     transition: all 0.25s linear;
     will-change: transform, background;
+    color: #fff;
+    font-size: 0.8rem;
     &:after,
     &:before {
       content: "";
       width: 3px;
       height: 3px;
       border-radius: 50%;
-      background: var(--theme-page-background);
+      background: #fff;
       display: block;
       position: absolute;
       top: 50%;
@@ -217,18 +234,28 @@ a {
 }
 
 .slider-drag {
+  .secondary-cursor {
+    width: 100px;
+    height: 100px;
+  }
   .cursor-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
     animation: scaleUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
       bgUp 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
 
     &:after {
       animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
-        translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+        translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s infinite
+          alternate;
     }
 
     &:before {
       animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
-        translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
+        translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s infinite
+          alternate;
     }
   }
 
@@ -293,6 +320,10 @@ a {
   }
 }
 .work {
+  .secondary-cursor {
+    width: 100px;
+    height: 100px;
+  }
   .cursor-background {
     background: var(--theme-page-blue);
     transform: scale(2);
@@ -302,6 +333,18 @@ a {
     justify-content: center;
     align-items: center;
     color: white;
+
+    &:after {
+      animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+        translateRightDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s infinite
+          alternate;
+    }
+
+    &:before {
+      animation: fadeIn 1s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards,
+        translateLeftDot 1s cubic-bezier(0.77, 0, 0.175, 1) 0s infinite
+          alternate;
+    }
   }
 
   .main-cursor-background {

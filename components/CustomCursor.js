@@ -86,6 +86,7 @@ const CustomCursor = () => {
               width="30"
             />
           ) : null}
+          {cursorStyles === "slider-drag" ? "Drag" : null}
         </div>
       </div>
     </div>

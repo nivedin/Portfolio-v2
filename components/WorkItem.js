@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useReducer, useRef } from "react";
+import animate from "../utils/animate";
 import styles from "../styles/Work.module.scss";
+import { motion } from "framer-motion";
 
 const WorkItem = ({ work, itemIndex }) => {
   const initialState = {
@@ -27,6 +29,7 @@ const WorkItem = ({ work, itemIndex }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
   const listItem = useRef(null);
+  const easeMethod = "easeInOutCubic";
 
   const parallax = (e) => {
     const x = (window.innerWidth - e.pageX * -5) / 100;
@@ -35,13 +38,29 @@ const WorkItem = ({ work, itemIndex }) => {
     dispatch({ type: "MOUSE-COORDINATES", payload: { x, y } });
   };
 
+  const handleOpacity = (initialOpacity, newOpacity, duration) => {
+    animate({
+      fromValue: initialOpacity,
+      toValue: newOpacity,
+      onUpdate: (newOpacity, callback) => {
+        dispatch({ type: "CHANGE-OPACITY", payload: newOpacity });
+        callback();
+      },
+      onComplete: () => {},
+      duration: duration,
+      easeMethod: easeMethod,
+    });
+  };
+
   const handleMouseEnter = () => {
-    dispatch({ type: "CHANGE-OPACITY", payload: 1 });
+    handleOpacity(0, 1, 500);
     listItem.current.addEventListener("mousemove", parallax);
   };
+
   const handleMouseLeave = () => {
-    dispatch({ type: "CHANGE-OPACITY", payload: 0 });
     listItem.current.removeEventListener("mousemove", parallax);
+    handleOpacity(1, 0, 800);
+    dispatch({ type: "MOUSE-COORDINATES", payload: initialState.parallaxPos });
   };
 
   return (
@@ -66,7 +85,7 @@ const WorkItem = ({ work, itemIndex }) => {
           data-scroll-target="#workitem"
           style={{
             opacity: state.opacity,
-            transform: `translate3d(${state.parallaxPos.x}px, ${state.parallaxPos.y}px,0px)`,
+            transform: `translate3d(${state.parallaxPos.x}px, ${state.parallaxPos.y}px,0px) `,
           }}
         />
 

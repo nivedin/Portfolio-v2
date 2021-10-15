@@ -1,5 +1,6 @@
 .workPage {
   padding: 2rem 6% 0 6%;
+  min-height: 100vh;
   .scrollUp {
     position: fixed;
     right: 30px;
@@ -36,15 +37,15 @@
     object-fit: cover;
     pointer-events: none;
     //z-index: 99;
-    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86),
-      opacity 0.35s ease-in-out;
+    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   }
 
   .menuTitle {
     font-size: 8.5vw;
     text-transform: lowercase;
     z-index: 1;
-    line-height: 1.1;
+    line-height: 1.2;
+    text-shadow: 2px 2px 2px rgba(22, 22, 22, 0.5);
   }
 
   .infoBlock {

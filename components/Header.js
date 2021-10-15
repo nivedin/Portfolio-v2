@@ -25,7 +25,16 @@ function Header() {
   };
 
   useEffect(() => {
-    document.body.classList.add("light");
+    if (typeof window !== "undefined") {
+      let localStorageTheme = localStorage.getItem("theme");
+      document.body.classList.add(localStorageTheme);
+      setTheme(localStorageTheme);
+    } else {
+      let localStorageTheme = "dark";
+      document.body.classList.add(localStorageTheme);
+      setTheme(localStorageTheme);
+    }
+
     window.addEventListener("wheel", handleScroll, { passive: true });
 
     //link-mouse-enter
@@ -85,16 +94,23 @@ function Header() {
 
   const handleThemeToggle = () => {
     setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  useEffect(() => {
     if (theme === "light") {
       document.body.classList.remove("dark");
       document.body.classList.add("light");
-      setIcon(<MoonIcon />);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("theme", "light");
+      }
     } else {
       document.body.classList.remove("light");
       document.body.classList.add("dark");
-      setIcon(<SunIcon />);
+      if (typeof window !== "undefined") {
+        localStorage.setItem("theme", "dark");
+      }
     }
-  };
+  }, [theme]);
 
   return (
     <motion.header
@@ -158,7 +174,8 @@ function Header() {
             </Link>
           </li>
           <button className={styles.themeBtn} onClick={handleThemeToggle}>
-            {icon}
+            {theme === "light" ? <MoonIcon /> : <SunIcon />}
+            {/* {theme === "light" ? "🌙" : "☀️"} */}
           </button>
         </ul>
       </nav>

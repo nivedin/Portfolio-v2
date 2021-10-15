@@ -20,7 +20,7 @@ const letterAnimation = {
   },
 };
 
-function AnimatedLetters({ text, tag }) {
+function AnimatedLetters({ text, tag, color }) {
   return (
     <motion.span
       className={tag === "h1" ? "animated-text-1" : "animated-text-2"}
