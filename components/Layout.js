@@ -21,10 +21,10 @@ function Layout({ children }) {
         //   smooth: true,
         //   multiplier: 0.9,
         // },
-        tablet: {
-          smooth: true,
-          multiplier: 0.9,
-        },
+        // tablet: {
+        //   smooth: true,
+        //   multiplier: 0.9,
+        // },
         class: "is-reveal",
       });
     });
