@@ -17,6 +17,8 @@ function AboutPage() {
 
   const [mouseHovePosition, setMouseHoverPosition] = useState({ x: 0, y: 0 });
 
+  const [isMobile, setMobile] = useState(true);
+
   const [time, setTime] = useState(new Date().getSeconds());
 
   const [helloWord, setHelloWord] = useState("Hey");
@@ -34,6 +36,8 @@ function AboutPage() {
   ];
 
   useEffect(() => {
+    window.innerWidth < 800 ? setMobile(true) : setMobile(false);
+
     const interval = setInterval(() => setTime(Date.now()), 2000);
     return () => {
       clearInterval(interval);
@@ -81,7 +85,7 @@ function AboutPage() {
 
   const imageVariants = {
     initial: {
-      scale: 1.5,
+      scale: isMobile ? 0.5 : 1.5,
       height: 0,
     },
     animate: {
@@ -101,6 +105,8 @@ function AboutPage() {
       scale: 0.8,
     },
   };
+
+  //console.log(imageVariants.initial.scale);
 
   const textVariant = {
     animate: {

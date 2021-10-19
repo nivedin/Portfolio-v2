@@ -16,7 +16,15 @@ import "slick-carousel/slick/slick-theme.css";
 function SingleWork() {
   const router = useRouter();
   const [work, setWork] = useState(null);
+  const [isMobile, setMobile] = useState(false);
   const dispatch = useGlobalDispatchContext();
+
+  useEffect(() => {
+    if (window) {
+      console.log(window.innerWidth);
+      window.innerWidth < 800 ? setMobile(true) : setMobile(false);
+    }
+  }, []);
 
   const SampleNextArrow = ({ onClick }) => {
     return (
@@ -82,7 +90,7 @@ function SingleWork() {
 
   const bgVariant = {
     initial: {
-      scale: 0.5,
+      scale: isMobile ? 0.5 : 1.5,
     },
     animate: {
       scale: 1,
