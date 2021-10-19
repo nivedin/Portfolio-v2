@@ -17,12 +17,10 @@ function Layout({ children }) {
         el: document.querySelector("#scroll-container"),
         multiplier: 0.9,
         smooth: true,
-        smoothMobile: true,
-        smartphone: {
-          smooth: true,
-          multiplier: 0.9,
-          smoothMobile: true,
-        },
+        // smartphone: {
+        //   smooth: true,
+        //   multiplier: 0.9,
+        // },
         tablet: {
           smooth: true,
           multiplier: 0.9,
@@ -33,6 +31,7 @@ function Layout({ children }) {
 
     setTimeout(() => {
       scroll.update();
+      console.log("update");
     }, 5000);
 
     return () => {
