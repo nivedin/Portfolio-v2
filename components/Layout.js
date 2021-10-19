@@ -29,6 +29,10 @@ function Layout({ children }) {
       });
     });
 
+    setTimeout(() => {
+      scroll.update();
+    }, 5000);
+
     return () => {
       if (scroll) {
         scroll.destroy();
