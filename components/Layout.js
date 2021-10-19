@@ -17,10 +17,10 @@ function Layout({ children }) {
         el: document.querySelector("#scroll-container"),
         multiplier: 0.9,
         smooth: true,
-        // smartphone: {
-        //   smooth: true,
-        //   multiplier: 0.9,
-        // },
+        smartphone: {
+          smooth: true,
+          multiplier: 0.9,
+        },
         // tablet: {
         //   smooth: true,
         //   multiplier: 0.9,
