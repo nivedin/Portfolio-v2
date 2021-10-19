@@ -180,7 +180,10 @@ function SingleWork() {
                 src={`/images/${work.images[1]}`}
                 alt={work.name}
                 objectFit="contain"
+                priority={true}
                 loading="eager"
+                placeholder="blur"
+                blurDataURL={`/images/${work.images[2]}`}
               />
             </div>
             <p
@@ -221,6 +224,7 @@ function SingleWork() {
                             src={`/images/${image}`}
                             alt={work.name}
                             objectFit="contain"
+                            priority={true}
                             loading="eager"
                           />
                         </div>

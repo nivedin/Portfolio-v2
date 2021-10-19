@@ -46,11 +46,19 @@
       display: flex;
       align-items: center;
       gap: 12%;
+
+      @media (max-width: 900px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+      }
       .detail {
         display: flex;
         flex-direction: column;
         gap: 30px;
-
+        @media (max-width: 750px) {
+          gap: 15px;
+        }
         h6 {
           font-size: 1.2rem;
           color: var(--theme-page-fade-white);
@@ -59,6 +67,10 @@
           font-size: 1.4rem;
         }
         a {
+          line-height: 0px;
+          @media (max-width: 400px) {
+            line-height: 20px;
+          }
           span {
             position: relative;
             &::after {
@@ -103,7 +115,9 @@
     }
     .aboutDetails {
       margin-top: 10rem;
-
+      @media (max-width: 750px) {
+        margin-top: 0;
+      }
       h6 {
         font-size: 1.2rem;
         margin-bottom: 20px;
@@ -115,6 +129,10 @@
         max-width: 1200px;
         width: 80%;
         text-align: left;
+        @media (max-width: 750px) {
+          font-size: clamp(1.8rem, 5vw, 4rem);
+          width: 100%;
+        }
       }
     }
   }
@@ -124,6 +142,9 @@
       height: calc(80vh + 2rem);
       position: relative;
       margin-bottom: 3rem;
+      @media (max-width: 450px) {
+        height: calc(60vh + 2rem);
+      }
       .sliderNext {
         position: absolute;
         bottom: -95px;
@@ -133,6 +154,10 @@
         font-size: 5rem;
         border: 0;
         transition: all 0.35s linear;
+        @media (max-width: 750px) {
+          font-size: 3rem;
+          left: 18%;
+        }
         &:hover {
           cursor: pointer;
           transform: translateX(10px);
@@ -148,6 +173,9 @@
         font-size: 5rem;
         border: 0;
         transition: all 0.35s linear;
+        @media (max-width: 750px) {
+          font-size: 3rem;
+        }
         &:hover {
           cursor: pointer;
           transform: translateX(-10px);
@@ -161,7 +189,12 @@
       overflow: hidden;
       position: relative;
       background: #d2d2d2;
+      @media (max-width: 450px) {
+        height: 60vh;
+      }
       img {
+        // max-width: 700px !important;
+        // width: 100% !important;
         transition: transform 0.5s linear;
       }
       &:hover {
@@ -184,18 +217,30 @@
       font-size: clamp(2rem, 10vw, 4rem);
       line-height: 150%;
       width: 90%;
+      @media (max-width: 750px) {
+        font-size: clamp(1.8rem, 5vw, 4rem);
+        width: 100%;
+      }
     }
     .moreAboutWork2 {
       padding: 2rem 6%;
       font-size: clamp(1rem, 5vw, 2.5rem);
       line-height: 150%;
       width: 90%;
+      @media (max-width: 750px) {
+        font-size: clamp(1.8rem, 5vw, 4rem);
+        width: 100%;
+      }
     }
     .moreAboutWork3 {
       padding: 4rem 6%;
       font-size: clamp(1rem, 5vw, 2.5rem);
       line-height: 150%;
       width: 90%;
+      @media (max-width: 750px) {
+        font-size: clamp(1.8rem, 5vw, 4rem);
+        width: 100%;
+      }
     }
     .blogLink {
       text-decoration: underline;

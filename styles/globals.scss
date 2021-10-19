@@ -32,6 +32,7 @@
 .light {
   --theme-page-background: rgb(254, 254, 255);
   --theme-page-text: #010613;
+  --theme-page-text-transparent: #01061370;
   --theme-page-fade-white: rgba(77, 77, 77, 0.952);
   --theme-page-blue: #3370ff;
 }
@@ -39,7 +40,8 @@
 .dark {
   --theme-page-background: #010613;
   --theme-page-text: rgb(254, 254, 255);
-  --theme-page-fade-white: rgba(243, 243, 243, 0.788);
+  --theme-page-text-transparent: rgba(254, 254, 255, 0.671);
+  --theme-page-fade-white: rgba(243, 243, 243, 0.863);
   --theme-page-blue: #3370ff;
 }
 
@@ -176,7 +178,7 @@ a {
   // overflow: hidden;
   transform: translate3d(0, 0, 0);
   position: fixed;
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     display: none;
   }
 }

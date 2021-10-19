@@ -34,17 +34,27 @@
       }
       h1 {
         font-size: 6rem;
+
         @media (max-width: 1150px) {
           font-size: 4rem;
+        }
+        @media (max-width: 600px) {
+          font-size: 3rem;
         }
         .handHey {
           display: flex;
           align-items: center;
           font-style: italic;
           flex-wrap: wrap;
-          //   .handTexts {
-          //     height: 200px;
-          //   }
+          .handTexts {
+            height: 150px;
+            width: 150px;
+            position: relative;
+            @media (max-width: 600px) {
+              height: 100px;
+              width: 100px;
+            }
+          }
           img {
             user-select: none;
           }

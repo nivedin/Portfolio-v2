@@ -168,8 +168,7 @@ function AboutPage() {
                   priority="true"
                   src="/wave-hello.gif"
                   alt="hand"
-                  height="100"
-                  width="100"
+                  layout="fill"
                 />
               </span>
               {helloWord},
