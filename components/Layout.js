@@ -17,9 +17,11 @@ function Layout({ children }) {
         el: document.querySelector("#scroll-container"),
         multiplier: 0.9,
         smooth: true,
+        smoothMobile: true,
         smartphone: {
           smooth: true,
           multiplier: 0.9,
+          smoothMobile: true,
         },
         tablet: {
           smooth: true,
