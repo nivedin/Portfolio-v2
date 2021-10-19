@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps, router }) {
             </motion.div>
           ) : (
             <>
-              <Layout>
+              <Layout isLoaded={preloader}>
                 <Component {...pageProps} />
               </Layout>
             </>

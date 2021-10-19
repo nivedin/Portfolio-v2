@@ -82,7 +82,7 @@ function SingleWork() {
 
   const bgVariant = {
     initial: {
-      scale: 1.5,
+      scale: 0.5,
     },
     animate: {
       scale: 1,
@@ -184,6 +184,7 @@ function SingleWork() {
                 loading="eager"
                 placeholder="blur"
                 blurDataURL={`/images/${work.images[2]}`}
+                onLoad={() => console.log("image loaded")}
               />
             </div>
             <p
@@ -226,6 +227,7 @@ function SingleWork() {
                             objectFit="contain"
                             priority={true}
                             loading="eager"
+                            onLoad={() => console.log("image loaded")}
                           />
                         </div>
                       </div>
