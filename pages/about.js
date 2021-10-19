@@ -173,7 +173,7 @@ function AboutPage() {
               </span>
               {helloWord},
             </span>
-            <span className={styles.aboutName}> I'm Nivedin P Suryan</span>
+            <span className={styles.aboutName}> I&apos;m Nivedin P Suryan</span>
           </motion.h1>
 
           <motion.div
