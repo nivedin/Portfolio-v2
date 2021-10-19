@@ -19,11 +19,11 @@ function Layout({ children }) {
         smooth: true,
         smartphone: {
           smooth: true,
-          inertia: 0.8,
+          multiplier: 0.9,
         },
         tablet: {
           smooth: true,
-          inertia: 0.8,
+          multiplier: 0.9,
         },
         class: "is-reveal",
       });
