@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import Header from "../components/Header";
+import Document, { Html, Main, NextScript } from "next/document";
+import HeadTag from "../components/HeadTag";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -10,9 +10,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head>
-          <title>Nivedin</title>
-        </Head>
+        <HeadTag />
         <body>
           <Main />
           <NextScript />

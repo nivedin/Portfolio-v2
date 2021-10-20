@@ -6,13 +6,8 @@ const HeadTag = ({ title }) => {
       <title>{title ? `${title} | Nivedin` : "Nivedin"}</title>
       <meta
         name="description"
-        content="I'm Nivedin P Suryan, a Front End Developer working remotely for Digital Vault having 1.5 years of experience in web development,
-              mostly with Front-end but working on backend as well.
-              I am doing my final year B.tech in Computer Science apart
-              from freelancing. I think understanding the human experience
-              is essential for creating useful and effective products that make
-              life easier. I enjoy using my skill-set to empower people to
-              accomplish their goals."
+        content="✌️ Hey, I'm Nivedin P Suryan a Front End Developer working remotely for Digital Vault having 1.5 years of experience in web development,
+              mostly with Front-end but working on backend as well."
       />
       <meta property="og:title" content="Nivedin" key="title" />
       <meta property="og:type" content="website" />
