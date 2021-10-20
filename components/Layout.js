@@ -30,6 +30,11 @@ function Layout({ children, isLoaded }) {
           class: "is-reveal",
         });
       });
+
+      setTimeout(() => {
+        scroll.update();
+      }, 5000);
+
       return () => {
         if (scroll) {
           scroll.destroy();
@@ -43,7 +48,7 @@ function Layout({ children, isLoaded }) {
     //   scroll.update();
     //   console.log("update");
     // }, 1000);
-  }, [router.pathname]);
+  }, [router.pathname, isLoaded]);
   return (
     <main id="scroll-container" data-scroll-container>
       <CustomCursor />
