@@ -56,8 +56,9 @@ const workDetails = [
     smallDescription:
       "Avoss offers ultramodern tech solutions including but not limited to Security Management, Lifestyle & Software Development.",
     description:
-      "Avoss is a web application that allows users to create and manage their own work schedules.  ",
-    description2: "Avoss is a",
+      "Avoss website is a portfolio site to showcase their services and clients.Avoss is a mumbai based firm which has clients from all categories.",
+    description2:
+      "This project was a great oppurtunity for me to sharpen my communication and other soft skills.This was more simple gig which has minimal animations and smooth transitions.",
     tools: "HTML, CSS, SASS, Javascript, Jquery, GSAP, AOS",
     images: [
       "avoss/avoss-featured.png",

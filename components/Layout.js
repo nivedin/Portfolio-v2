@@ -21,7 +21,7 @@ function Layout({ children, isLoaded }) {
           smoothMobile: true,
           smartphone: {
             smooth: true,
-            multiplier: 0.9,
+            multiplier: 0.1,
           },
           tablet: {
             smooth: true,
