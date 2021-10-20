@@ -57,29 +57,34 @@ function AboutPage() {
     //console.log("mouse", mouseX, mouseY);
   };
 
-  const handleWorkHover = (e, workItem) => {
-    let workImage;
-
+  const handleWorkHover = (workItem) => {
     if (workItem === "ditalVault") {
-      workImage = "avoss_gif.gif";
+      dispatch({
+        type: "CURSOR_STYLES",
+        cursorStyles: "link-digitalvault",
+      });
     } else if (workItem === "quantek") {
-      workImage = "quantek_gif.gif";
+      dispatch({
+        type: "CURSOR_STYLES",
+        cursorStyles: "link-quantek",
+      });
     } else if (workItem === "sapne") {
-      workImage = "sapne_gif.gif";
+      dispatch({
+        type: "CURSOR_STYLES",
+        cursorStyles: "link-sapne",
+      });
+    } else {
+      dispatch({
+        type: "CURSOR_STYLES",
+        cursorStyles: "default",
+      });
     }
-    setWorkHover({
-      hover: true,
-      workItem: workItem,
-      image: `/images/common/${workImage}`,
-    });
-
-    e.target.addEventListener("mousemove", handleMouseMove);
   };
 
   const handleWorkNotHover = () => {
-    setWorkHover({
-      hover: false,
-      workItem: false,
+    dispatch({
+      type: "CURSOR_STYLES",
+      cursorStyles: "default",
     });
   };
 
@@ -230,7 +235,7 @@ function AboutPage() {
         <div className={styles.workHistoryContainer}>
           <div
             className={styles.workHistoryItem}
-            onMouseEnter={(e) => handleWorkHover(e, "ditalVault")}
+            onMouseEnter={() => handleWorkHover("ditalVault")}
             onMouseLeave={handleWorkNotHover}
           >
             <h3>Digital Vault (2020 - Present)</h3>
@@ -249,7 +254,7 @@ function AboutPage() {
           </div>
           <div
             className={styles.workHistoryItem}
-            onMouseEnter={(e) => handleWorkHover(e, "quantek")}
+            onMouseEnter={() => handleWorkHover("quantek")}
             onMouseLeave={handleWorkNotHover}
           >
             <h3>Quantek (2021 - 2 Months)</h3>
@@ -268,7 +273,7 @@ function AboutPage() {
           </div>
           <div
             className={styles.workHistoryItem}
-            onMouseEnter={(e) => handleWorkHover(e, "sapne")}
+            onMouseEnter={() => handleWorkHover("sapne")}
             onMouseLeave={handleWorkNotHover}
           >
             <h3>Sapne NGO (2020 - 3 Months)</h3>
@@ -285,7 +290,7 @@ function AboutPage() {
               sapne.org.in <span>→</span>
             </a>
           </div>
-          <div className={styles.workImageContainer}>
+          {/* <div className={styles.workImageContainer}>
             {workHover.hover && (
               <motion.img
                 src={workHover.image}
@@ -311,7 +316,7 @@ function AboutPage() {
                 }}
               />
             )}
-          </div>
+          </div> */}
         </div>
         <div style={{ marginTop: "10rem" }}>
           <MagneticButton text="Work" link="/work" />

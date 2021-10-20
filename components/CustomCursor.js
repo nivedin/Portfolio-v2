@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGlobalStateContext } from "../context/globalContext";
 import Image from "next/image";
 
 const CustomCursor = () => {
+  const [cursorImage, setCursorImage] = useState(null);
   const { cursorStyles } = useGlobalStateContext();
   const secondaryCursor = useRef(null);
   const mainCursor = useRef(null);
@@ -69,6 +70,19 @@ const CustomCursor = () => {
     };
     positionRef && secondaryCursor && followMouse();
   }, [secondaryCursor]);
+
+  useEffect(() => {
+    if (cursorStyles === "link-digitalvault") {
+      setCursorImage("avoss_gif.gif");
+    } else if (cursorStyles === "link-quantek") {
+      setCursorImage("quantek_gif.gif");
+    } else if (cursorStyles === "link-sapne") {
+      setCursorImage("sapne_gif.gif");
+    } else {
+      setCursorImage(null);
+    }
+  }, [cursorStyles]);
+
   return (
     <div className={`cursor-wrapper ${cursorStyles}`}>
       <div className="main-cursor " ref={mainCursor}>
@@ -87,6 +101,22 @@ const CustomCursor = () => {
             />
           ) : null}
           {cursorStyles === "slider-drag" ? "Drag" : null}
+          {cursorStyles && cursorImage && (
+            <Image
+              priority="true"
+              src={`/images/common/${cursorImage}`}
+              alt={cursorImage}
+              layout="fill"
+            />
+          )}
+          {/* {cursorStyles == "link-digitalvault" ? (
+            <Image
+              priority="true"
+              src={`/images/common/${cursorImage}`}
+              alt="hand"
+              layout="fill"
+            />
+          ) : null} */}
         </div>
       </div>
     </div>

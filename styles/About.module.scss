@@ -114,7 +114,7 @@
   .workHistorySection {
     padding: 4rem 0;
     h2 {
-      font-size: 5rem;
+      font-size: 5.2rem;
 
       @media (max-width: 500px) {
         font-size: 4rem;
@@ -125,9 +125,15 @@
       position: relative;
       .workHistoryItem {
         margin-bottom: 30px;
+        position: relative;
+        z-index: 5;
+        //cursor: none;
+        //background: red;
+        width: fit-content;
         h3 {
           font-weight: 600;
-          font-size: 1.5rem;
+          font-size: 2rem;
+          pointer-events: none;
           @media (max-width: 500px) {
             font-size: 1.2rem;
           }
@@ -136,6 +142,11 @@
           margin: 6px 0 0 0;
           color: var(--theme-page-fade-white);
           font-style: italic;
+          pointer-events: none;
+          font-size: 1.3rem;
+          @media (max-width: 500px) {
+            font-size: 1rem;
+          }
         }
         a {
           font-weight: 500;
