@@ -21,7 +21,11 @@ const HeadTag = ({ title }) => {
       />
       <meta property="og:site_name" content={`${title} | Nivedin`} />
       <meta property="og:url" content="https://nivedin.com" />
-      <meta name="twitter:card" content="summary" />
+      <meta
+        name="twitter:card"
+        content="✌️ Hey, I'm Nivedin P Suryan a Front End Developer working remotely for Digital Vault having 1.5 years of experience in web development,
+              mostly with Front-end but working on backend as well."
+      />
       <meta name="twitter:title" content="Nivedin" />
       <meta
         name="twitter:description"
