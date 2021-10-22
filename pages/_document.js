@@ -11,6 +11,17 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link rel="manifest" href="/manifest.json" />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#fff"
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#111"
+          />
           <meta
             name="description"
             content="✌️ Hey, I'm Nivedin P Suryan a Front End Developer working remotely for Digital Vault having 1.5 years of experience in web development,
@@ -37,17 +48,6 @@ class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/favicon.ico" />
           <meta property="og:image" content="/nivedin_image-min.jpg" />
           <meta name="twitter:image" content="/nivedin_image-min.jpg" />
-          <link rel="manifest" href="/manifest.json" />
-          <meta
-            name="theme-color"
-            media="(prefers-color-scheme: light)"
-            content="#fff"
-          />
-          <meta
-            name="theme-color"
-            media="(prefers-color-scheme: dark)"
-            content="#111"
-          />
         </Head>
         <body>
           <Main />

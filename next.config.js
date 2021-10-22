@@ -4,7 +4,8 @@ const path = require("path");
 module.exports = withPWA({
   pwa: {
     dest: "public",
-    disable: false,
+    register: true,
+    skipWaiting: true,
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],

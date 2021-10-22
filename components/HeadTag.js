@@ -3,6 +3,17 @@ import Head from "next/head";
 const HeadTag = ({ title }) => {
   return (
     <Head>
+      <link rel="manifest" href="/manifest.json" />
+      <meta
+        name="theme-color"
+        media="(prefers-color-scheme: light)"
+        content="#fff"
+      />
+      <meta
+        name="theme-color"
+        media="(prefers-color-scheme: dark)"
+        content="#111"
+      />
       <title>{title ? `${title} | Nivedin` : "Nivedin"}</title>
       <meta
         name="description"
@@ -40,17 +51,6 @@ const HeadTag = ({ title }) => {
       <link rel="apple-touch-icon" href="/favicon.ico" />
       <meta property="og:image" content="/nivedin_image-min.jpg" />
       <meta name="twitter:image" content="/nivedin_image-min.jpg" />
-      <link rel="manifest" href="/manifest.json" />
-      <meta
-        name="theme-color"
-        media="(prefers-color-scheme: light)"
-        content="#fff"
-      />
-      <meta
-        name="theme-color"
-        media="(prefers-color-scheme: dark)"
-        content="#111"
-      />
     </Head>
   );
 };

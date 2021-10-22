@@ -160,6 +160,11 @@ a {
     margin-left: 0;
   }
 }
+.animated-text-2 {
+  @media (max-width: 600px) {
+    margin-bottom: 16px;
+  }
+}
 
 .text-letters-1:hover {
   transform: translateY(-10px) !important;
