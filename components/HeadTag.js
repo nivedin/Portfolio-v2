@@ -41,12 +41,8 @@ const HeadTag = ({ title }) => {
       <meta property="og:image" content="/nivedin_image-min.jpg" />
       <meta name="twitter:image" content="/nivedin_image-min.jpg" />
       <link rel="manifest" href="/manifest.json" />
-      <link rel="manifest" href="/manifest.json" />
       <meta charset="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-      />
+
       <link
         rel="apple-touch-icon"
         href="/icons/apple-touch-icon-152x152.png"
