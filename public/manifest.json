@@ -1,0 +1,38 @@
+{
+  "short_name": "Nivedin",
+  "name": "Nivedin's Portfolio",
+  "description": "✌️ Hey, I'm Nivedin P Suryan a Front End Developer working remotely for Digital Vault having 1.5 years of experience in web development,mostly with Front-end but working on backend as well.",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/maskable.png",
+      "sizes": "192x192",
+      "type": "image/x-icon",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FFF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#111"
+}

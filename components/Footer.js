@@ -14,7 +14,6 @@ function Footer() {
       .querySelectorAll(".Footer_footerLinksContainer__3IyNc a")
       .forEach((el) => {
         el.addEventListener("mouseover", () => {
-          console.log("mouseover");
           handleDispatch("CURSOR_STYLES", "footerLink");
         });
         el.addEventListener("mouseout", () => {

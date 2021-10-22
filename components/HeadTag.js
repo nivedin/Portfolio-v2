@@ -40,6 +40,27 @@ const HeadTag = ({ title }) => {
       <link rel="apple-touch-icon" href="/favicon.ico" />
       <meta property="og:image" content="/nivedin_image-min.jpg" />
       <meta name="twitter:image" content="/nivedin_image-min.jpg" />
+      <link rel="manifest" href="/manifest.json" />
+      <link rel="manifest" href="/manifest.json" />
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+      />
+      <link
+        rel="apple-touch-icon"
+        href="/icons/apple-touch-icon-152x152.png"
+      ></link>
+      <meta
+        name="theme-color"
+        media="(prefers-color-scheme: light)"
+        content="#fff"
+      />
+      <meta
+        name="theme-color"
+        media="(prefers-color-scheme: dark)"
+        content="#111"
+      />
     </Head>
   );
 };
