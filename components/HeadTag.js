@@ -41,12 +41,6 @@ const HeadTag = ({ title }) => {
       <meta property="og:image" content="/nivedin_image-min.jpg" />
       <meta name="twitter:image" content="/nivedin_image-min.jpg" />
       <link rel="manifest" href="/manifest.json" />
-      <meta charset="utf-8" />
-
-      <link
-        rel="apple-touch-icon"
-        href="/icons/apple-touch-icon-152x152.png"
-      ></link>
       <meta
         name="theme-color"
         media="(prefers-color-scheme: light)"
