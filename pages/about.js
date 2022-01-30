@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import HeadTag from "../components/HeadTag";
 import MagneticButton from "../components/MagneticButton";
+import workHistory from "../utils/work-history";
+import SingleWorkItem from "../components/SingleWorkItem";
 
 function AboutPage() {
   const dispatch = useGlobalDispatchContext();
@@ -58,12 +60,17 @@ function AboutPage() {
   };
 
   const handleWorkHover = (workItem) => {
-    if (workItem === "ditalVault") {
+    if (workItem === "hoppscotch") {
+      dispatch({
+        type: "CURSOR_STYLES",
+        cursorStyles: "link-hoppscotch",
+      });
+    } else if (workItem === "ditalvault") {
       dispatch({
         type: "CURSOR_STYLES",
         cursorStyles: "link-digitalvault",
       });
-    } else if (workItem === "quantek") {
+    } else if (workItem === "myservicecube") {
       dispatch({
         type: "CURSOR_STYLES",
         cursorStyles: "link-quantek",
@@ -207,7 +214,7 @@ function AboutPage() {
             <p data-scroll data-scroll-speed="3">
               A Front End Developer working remotely for{" "}
               <a
-                href="https://digitalvault.in/"
+                href="https://hoppscotch.io"
                 target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={() =>
@@ -217,10 +224,10 @@ function AboutPage() {
                   dispatch({ type: "CURSOR_STYLES", cursorStyles: "default" })
                 }
               >
-                <span>Digital Vault</span>
+                <span>Hoppscotch</span>
               </a>{" "}
-              Mumbai, Nashik having 1.5 years of experience in web development,
-              mostly with Front-end but working on backend as well.
+              having 2 years of experience in web development, mostly with
+              Front-end but working on backend as well.
               <br />I am doing my final year B.tech in Computer Science apart
               from freelancing. <br />I think understanding the human experience
               is essential for creating useful and effective products that make
@@ -233,7 +240,19 @@ function AboutPage() {
       <section className={styles.workHistorySection} data-scroll-section>
         <h2>Work History</h2>
         <div className={styles.workHistoryContainer}>
-          <div
+          {workHistory.map((work) => (
+            <SingleWorkItem
+              company={work.company}
+              position={work.position}
+              time={work.time}
+              link={work.link}
+              description={work.description}
+              key={work.id}
+              handleWorkHover={handleWorkHover}
+              handleWorkNotHover={handleWorkNotHover}
+            />
+          ))}
+          {/* <div
             className={styles.workHistoryItem}
             onMouseEnter={() => handleWorkHover("ditalVault")}
             onMouseLeave={handleWorkNotHover}
@@ -289,7 +308,7 @@ function AboutPage() {
             >
               sapne.org.in <span>→</span>
             </a>
-          </div>
+          </div> */}
           {/* <div className={styles.workImageContainer}>
             {workHover.hover && (
               <motion.img
