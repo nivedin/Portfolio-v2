@@ -140,7 +140,7 @@ function AboutPage() {
         >
           <motion.img
             priority={true}
-            src="/nivedin_image-min.jpg"
+            src="/nivedin-image.jpeg"
             alt="Nivedin-image"
             variants={imageVariants}
             initial="initial"
@@ -228,11 +228,20 @@ function AboutPage() {
               </a>{" "}
               having 2 years of experience in web development, mostly with
               Front-end but working on backend as well.
-              <br />I am doing my final year B.tech in Computer Science apart
-              from freelancing. <br />I think understanding the human experience
-              is essential for creating useful and effective products that make
-              life easier. I enjoy using my skill-set to empower people to
-              accomplish their goals.
+              <br /> <br />
+              Even though I stumbled upon code by accident, it's something I've
+              come to really like. But like they say, good things come to us
+              without plan, no? I especially enjoy watching code bring to life
+              an entirely new beautiful thing, it's magical. For me, each
+              project I have the privilege to work on is a new opportunity to
+              learn new things, meet people with ideas that differ from mine and
+              discover things about myself I never knew were beneath the layers
+              of all of me.
+              <br />
+              <br />
+              I'm available for full-time roles and freelance projects
+              worldwide. As long as you don't mind watching me work from screens
+              away.
             </p>
           </motion.div>
         </div>

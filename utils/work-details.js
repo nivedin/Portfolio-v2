@@ -129,28 +129,6 @@ const workDetails = [
     linkText: "pranabydimplejangda.com",
     bgColor: "#BFA374",
   },
-  {
-    id: 6,
-    name: "Next-App-1",
-    featured: false,
-    smallDescription:
-      "Next-App is a next generation social media application is real-time chat and notification.",
-    description:
-      "Next-App is a web application that allows users to create and manage their own work schedules.  ",
-    tools: "Next.js, Node, Express, MongoDB, Socket.io",
-    images: [
-      "next-social-media/next-book-featured.png",
-      "next-social-media/NextBook-2.png",
-      "next-social-media/NextBook-1.png",
-      "next-social-media/NextBook-3.png",
-      "next-social-media/NextBook-4.png",
-      "next-social-media/NextBook-5.png",
-      "next-social-media/NextBook-6.png",
-    ],
-
-    link: "https://next-app.com/",
-    linkText: "social-media-nextjs.herokuapp.com",
-  },
 ];
 
 export default workDetails;

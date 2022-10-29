@@ -49,8 +49,8 @@ const HeadTag = ({ title }) => {
       <meta name="twitter:creator" content="nivedin" />
       <link rel="icon" type="image/png" href="/favicon.ico" />
       <link rel="apple-touch-icon" href="/favicon.ico" />
-      <meta property="og:image" content="/nivedin_image-min.jpg" />
-      <meta name="twitter:image" content="/nivedin_image-min.jpg" />
+      <meta property="og:image" content="/nivedin-image.jpeg" />
+      <meta name="twitter:image" content="/nivedin-image.jpeg" />
     </Head>
   );
 };
