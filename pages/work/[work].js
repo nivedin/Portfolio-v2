@@ -146,7 +146,7 @@ function SingleWork() {
               <div className={styles.detail} data-scroll data-scroll-speed="2">
                 <h6>Site</h6>
                 <Link href={work.link}>
-                  <a>
+                  <a target="_blank" rel="noopener noreferrer">
                     <span
                       onMouseEnter={() =>
                         dispatch({
